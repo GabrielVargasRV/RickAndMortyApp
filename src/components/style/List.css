@@ -1,11 +1,21 @@
 .List{
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
     background-color: #323232;
 }
+.List .characters{
+    width: 90%;
+    display: grid;
+    margin: 0px auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 30px;
+}
 .loadmore{
+    width: 70%;
+    margin: 30px auto;
     background-color: #ffac41;
     border-style: none;
     border-radius: 10px;
@@ -14,4 +24,5 @@
     font-weight: 700;
     font-size: 20px;
     font-style: italic;
+    outline: none;
 }

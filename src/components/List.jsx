@@ -3,44 +3,53 @@ import Character from "./Character";
 import "./style/List.css";
 const List = () => {
   const [state, setState] = useState({
-      nextPage: 1,
-      loading: true,
-      error: false,
-      data:[]
+    nextPage: 1,
+    loading: true,
+    error: false,
+    data: [],
   });
 
-
   useEffect(() => {
-    try{
-        loadCharacters()
-    }catch(err){
-        setState({
-            loading:false,
-            error: true
-        })
+    try {
+      loadCharacters();
+    } catch (err) {
+      setState({
+        loading: false,
+        error: true,
+      });
     }
   }, []);
 
   const loadCharacters = () => {
     fetch(`https://rickandmortyapi.com/api/character?page=${state.nextPage}`)
-    .then((res) => res.json())
-    .then((data) => {
-      setState({
+      .then((res) => res.json())
+      .then((data) => {
+        setState({
           nextPage: state.nextPage + 1,
           loading: false,
           error: false,
-          data: [].concat(state.data,data.results)
+          data: [].concat(state.data, data.results),
+        });
       });
-    });
-  }
+  };
 
   return (
-    <div className="List" >
-      { state.loading ? <h2>Loading...</h2> :state.data.map((c) => {
-        return <Character image={c.image} name={c.name} id={c.id} key={c.id} />;
-      })}
+    <div className="List">
+      <div className="characters" >
+        {state.loading ? (
+          <h2>Loading...</h2>
+        ) : (
+          state.data.map((c) => {
+            return (
+              <Character image={c.image} name={c.name} id={c.id} key={c.id} />
+            );
+          })
+        )}
+      </div>
       {!state.loading && (
-          <button className="loadmore" onClick={loadCharacters} >Load More</button>
+        <button className="loadmore" onClick={loadCharacters}>
+          Load More
+        </button>
       )}
     </div>
   );

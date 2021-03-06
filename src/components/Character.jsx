@@ -4,7 +4,7 @@ import "./style/Character.css"
 const Character = (props) => {
   return (
     <div className="Character" >
-      <Link to={`/${props.id}`} >
+      <Link className="link" to={`/${props.id}`} >
         <img src={props.image} alt="" />
         <p>{props.name}</p>
       </Link>

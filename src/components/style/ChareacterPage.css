@@ -1,0 +1,31 @@
+.CharacterPage{
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #323232;
+}
+.container{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    background-color: black;
+    border-radius: 20px;
+}
+.container img{
+    height: 100%;
+    border-radius: 20px;
+}
+.container .info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.container .info p{
+    font-size: 40px;
+    font-weight: 700;
+}

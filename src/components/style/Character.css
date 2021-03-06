@@ -1,0 +1,19 @@
+.Character{
+    width: 100%;
+    display: flex;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: -3px 0px 15px -5px #000000;
+}
+.Character img{
+    width: 100%;
+    border-radius: 10px;
+}
+.Character p{
+    margin: 0px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: italic;
+}

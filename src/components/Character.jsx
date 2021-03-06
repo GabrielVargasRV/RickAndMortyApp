@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./style/Character.css"
 const Character = (props) => {
   return (
-    <div>
+    <div className="Character" >
       <Link to={`/${props.id}`} >
         <img src={props.image} alt="" />
         <p>{props.name}</p>
